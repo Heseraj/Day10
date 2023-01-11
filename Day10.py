@@ -36,6 +36,7 @@ def is_leap(year):
         return False
 
 def days_in_month(year, month):
+    """"This is a doc string."""
     if month >12 or month <1:
         return f"sorry! invalid data"
     month_days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
@@ -51,9 +52,43 @@ days = days_in_month(year, month)
 print(days)
 
 #%%
+def add(n1, n2):
+    return n1 + n2
 
+def subtract(n1, n2):
+    return n1 - n1
 
+def multiplication(n1, n2):
+    return n1*n2
+
+def division(n1, n2):
+    return n1/n2
+
+operation = {
+    "+":add,
+    "-":subtract,
+    "*":multiplication,
+    "/":division
+}
+
+num1 = int(input("what is the first number? \n"))
+num2 = int(input("what is the second number? \n"))
+
+for ops in operation:
+    print(ops)
+    
+ops_symbol= input("Pick an operation from above! \n ")
+
+num2 = int(input("what is the second number? \n"))
+
+calculation_function = operation[ops_symbol]
+
+answer = calculation_function(num1, num2, )
+
+print(f"{num2} {ops_symbol} {num2} = {answer}")
 
 
 #%%
+for i in operation:
+    print(i)
 #%%
