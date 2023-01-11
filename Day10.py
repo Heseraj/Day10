@@ -89,6 +89,26 @@ print(f"{num2} {ops_symbol} {num2} = {answer}")
 
 
 #%%
-for i in operation:
-    print(i)
+from cal_art import logo
+
+def calculator():
+    num1 = float(input("what is the first number? \n"))
+    for symbol in operation:
+        print(symbol)
+    should_continue = True
+    
+    while should_continue:
+        operation_symbol = input("Pick an operation: \n")
+        num2 = float(input("what is the next number? \n"))
+        calculation_function = operation[operation_symbol]
+        answer = calculation_function(num1, num2)
+        
+        print(f"{num1}  {operation_symbol} {num2} = {answer}")
+        
+        if input(f"Type 'y' to continue calculating with answer or type 'n' start a new calculation") == "y":
+            num1 = answer
+        else:
+            should_continue == False
+            calculator()
 #%%
+calculator()
